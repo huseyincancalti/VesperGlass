@@ -2,6 +2,28 @@
 
 Vesper Glass is a dark, neo-minimalist glass theme for Playnite Desktop Mode. It pairs tactile translucent surfaces with a vivid amber accent, full-library backdrop treatment, and animated edge panels.
 
+## Preview
+
+### Library details · Auto-hide panels: left navigation, top toolbar, and right filters
+
+Move the pointer to the left, top, or right screen edge to reveal the corresponding panel.
+
+<p align="center">
+  <img src="docs/screenshots/library-details-we-were-here.png" alt="Vesper Glass library details with We Were Here Together" width="49%" />
+  <img src="docs/screenshots/library-details-last-of-us.png" alt="Vesper Glass library details with The Last of Us Part II Remastered" width="49%" />
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/library-details-satisfactory.png" alt="Vesper Glass library details with Satisfactory" width="49%" />
+  <img src="docs/screenshots/search-overlay.png" alt="Vesper Glass search overlay" width="49%" />
+</p>
+
+### Accent color configuration
+
+<p align="center">
+  <img src="docs/screenshots/accent-color-settings.png" alt="Vesper Glass Accent color setting in ThemeModifier" width="74%" />
+</p>
+
 ## Download and install
 
 ### Install from Playnite — recommended
@@ -34,24 +56,6 @@ This is the normal installation path and the only one that receives Playnite-man
 ## Accent color
 
 The default accent is amber. If you use the ThemeModifier extension, open its Vesper Glass entry and change **Accent color**. Restart Playnite after changing the value.
-
-## Gallery
-
-### Library details
-
-![Vesper Glass library details with We Were Here Together](docs/screenshots/library-details-we-were-here.png)
-
-![Vesper Glass library details with The Last of Us Part II Remastered](docs/screenshots/library-details-last-of-us.png)
-
-![Vesper Glass library details with Satisfactory](docs/screenshots/library-details-satisfactory.png)
-
-### Navigation and search
-
-![Vesper Glass search overlay](docs/screenshots/search-overlay.png)
-
-### Accent color configuration
-
-![Vesper Glass Accent color setting in ThemeModifier](docs/screenshots/accent-color-settings.png)
 
 ## Known issue
 
