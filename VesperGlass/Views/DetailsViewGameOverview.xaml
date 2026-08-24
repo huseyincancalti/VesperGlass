@@ -1,0 +1,273 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    mc:Ignorable="d">
+    <Style TargetType="{x:Type DetailsViewGameOverview}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DetailsViewGameOverview}">
+                    <Grid d:DesignWidth="1280"
+                          d:DesignHeight="960"
+                          d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}">
+                        <FadeImage x:Name="PART_ImageBackground"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"
+                                   Stretch="UniformToFill"
+                                   Opacity="0.88"
+                                   IsHitTestVisible="False" />
+                        <Border Background="{DynamicResource WindowBackgourndBrush}"
+                                Opacity="0.22"
+                                IsHitTestVisible="False" />
+                        <Border Background="{DynamicResource VesperHeroScrimBrush}"
+                                Opacity="0.78"
+                                IsHitTestVisible="False" />
+                        <Border Background="{DynamicResource VesperAccentBrush}"
+                                Opacity="0.34"
+                                IsHitTestVisible="False">
+                            <Border.OpacityMask>
+                                <RadialGradientBrush Center="0.18,0.42"
+                                                     GradientOrigin="0.18,0.42"
+                                                     RadiusX="0.78"
+                                                     RadiusY="0.82">
+                                    <GradientStop Color="#F2000000" Offset="0" />
+                                    <GradientStop Color="#5C000000" Offset="0.34" />
+                                    <GradientStop Color="#00000000" Offset="1" />
+                                </RadialGradientBrush>
+                            </Border.OpacityMask>
+                        </Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="LeftListOffset"
+                                    Grid.Column="0"
+                                    Width="{Settings DetailsListWitdh}"
+                                    Background="Transparent"
+                                    IsHitTestVisible="False">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings DetailsListPosition}" Value="Right">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                            </Border>
+                            <Border x:Name="RightListOffset"
+                                    Grid.Column="2"
+                                    Width="{Settings DetailsListWitdh}"
+                                    Background="Transparent"
+                                    IsHitTestVisible="False">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings DetailsListPosition}" Value="Right">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                            </Border>
+                            <ScrollViewer x:Name="PART_ScrollViewHost"
+                                          Grid.Column="1"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          VerticalScrollBarVisibility="Auto"
+                                          Style="{DynamicResource DetailsScrollViewer}"
+                                          Background="Transparent"
+                                          WindowChrome.IsHitTestVisibleInChrome="True">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="460" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid Margin="34,28,34,30" VerticalAlignment="Bottom">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,30,0">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                            <Border Width="48"
+                                                    Height="48"
+                                                    Margin="0,0,12,0"
+                                                    Padding="5"
+                                                    Style="{DynamicResource VesperCardStyle}">
+                                                <Image Name="PART_ImageIcon"
+                                                       MaxHeight="38"
+                                                       MaxWidth="38"
+                                                       RenderOptions.BitmapScalingMode="Fant" />
+                                            </Border>
+                                            <TextBlock Name="PART_TextDisplayName"
+                                                       FontFamily="{DynamicResource FontFamily}"
+                                                       FontSize="{DynamicResource FontSizeLargest}"
+                                                       FontWeight="SemiBold"
+                                                       TextWrapping="Wrap"
+                                                       VerticalAlignment="Center"
+                                                       Foreground="{DynamicResource TextBrush}" />
+                                        </StackPanel>
+                                        <Grid HorizontalAlignment="Left">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Button Name="PART_ButtonPlayAction"
+                                                    Grid.Column="0"
+                                                    MinWidth="160"
+                                                    Height="46"
+                                                    Style="{DynamicResource PlayButton}" />
+                                            <Button Name="PART_ButtonContextAction"
+                                                    Grid.Column="0"
+                                                    MinWidth="160"
+                                                    Height="46" />
+                                            <Button Name="PART_ButtonMoreActions"
+                                                    Grid.Column="1"
+                                                    Content="{DynamicResource LOCMoreAction}"
+                                                    MinWidth="118"
+                                                    Height="46"
+                                                    Margin="10,0,0,0" />
+                                            <Button x:Name="PART_ButtonEditGame"
+                                                    Grid.Column="2"
+                                                    Width="46"
+                                                    Height="46"
+                                                    Margin="10,0,0,0"
+                                                    Padding="0"
+                                                    FontSize="19"
+                                                    Focusable="False"
+                                                    Content="&#xeded;"
+                                                    FontFamily="{DynamicResource FontIcoFont}" />
+                                        </Grid>
+                                    </StackPanel>
+                                    <Border Grid.Column="1"
+                                            Width="188"
+                                            Height="270"
+                                            Padding="5"
+                                            VerticalAlignment="Bottom"
+                                            Style="{DynamicResource VesperGlassPanelStyle}">
+                                        <Image Name="PART_ImageCover"
+                                               StretchDirection="Both"
+                                               Stretch="Uniform"
+                                               RenderOptions.BitmapScalingMode="Fant" />
+                                    </Border>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Margin="28,8,28,34">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="340" />
+                                    <ColumnDefinition Width="18" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Style="{DynamicResource VesperGlassPanelStyle}">
+                                    <StackPanel>
+                                        <TextBlock Text="{DynamicResource LOCGameDetails}"
+                                                   Style="{DynamicResource VesperSectionTitleStyle}" />
+                                        <GridEx ColumnCount="2"
+                                                StarColumns="1"
+                                                RowCount="25"
+                                                AutoLayoutColumns="2">
+                                            <GridEx.Resources>
+                                                <Style TargetType="Label" BasedOn="{StaticResource VesperMetadataLabelStyle}" />
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource VesperMetadataTextStyle}" />
+                                                <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
+                                                <Style TargetType="ItemsControl">
+                                                    <Setter Property="Margin" Value="0,5,0,5" />
+                                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                                </Style>
+                                            </GridEx.Resources>
+                                            <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
+                                            <TextBlock Name="PART_TextAdded" />
+                                            <Label Name="PART_ElemPlayTime" Content="{DynamicResource LOCTimePlayed}" />
+                                            <TextBlock Name="PART_TextPlayTime" />
+                                            <Label Name="PART_ElemLastPlayed" Content="{DynamicResource LOCLastPlayed}" />
+                                            <TextBlock Name="PART_TextLastActivity" />
+                                            <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
+                                            <TextBlock Name="PART_TextRecentActivity" />
+                                            <Label Name="PART_ElemCompletionStatus" Content="{DynamicResource LOCCompletionStatus}" />
+                                            <Button Name="PART_ButtonCompletionStatus" />
+                                            <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
+                                            <Button Name="PART_ButtonInstallDirectory" />
+                                            <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
+                                            <TextBlock Name="PART_TextInstallSize" />
+                                            <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
+                                            <Button Name="PART_ButtonLibrary" />
+                                            <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
+                                            <ItemsControl Name="PART_ItemsPlatforms" />
+                                            <Label Name="PART_ElemGenres" Content="{DynamicResource LOCGenreLabel}" />
+                                            <ItemsControl Name="PART_ItemsGenres" />
+                                            <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
+                                            <ItemsControl Name="PART_ItemsDevelopers" />
+                                            <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
+                                            <ItemsControl Name="PART_ItemsPublishers" />
+                                            <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
+                                            <Button Name="PART_ButtonReleaseDate" />
+                                            <Label Name="PART_ElemCategories" Content="{DynamicResource LOCGameCategoriesTitle}" />
+                                            <ItemsControl Name="PART_ItemsCategories" />
+                                            <Label Name="PART_ElemFeatures" Content="{DynamicResource LOCFeaturesLabel}" />
+                                            <ItemsControl Name="PART_ItemsFeatures" />
+                                            <Label Name="PART_ElemTags" Content="{DynamicResource LOCTagsLabel}" />
+                                            <ItemsControl Name="PART_ItemsTags" />
+                                            <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
+                                            <ItemsControl Name="PART_ItemsAgeRatings" />
+                                            <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
+                                            <ItemsControl Name="PART_ItemsSeries" />
+                                            <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
+                                            <Button Name="PART_ButtonSource" />
+                                            <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
+                                            <ItemsControl Name="PART_ItemsRegions" />
+                                            <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
+                                            <Button Name="PART_ButtonVersion" />
+                                            <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
+                                            <TextBlock Name="PART_TextCommunityScore" Style="{DynamicResource TextBlockGameScore}" />
+                                            <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
+                                            <TextBlock Name="PART_TextCriticScore" Style="{DynamicResource TextBlockGameScore}" />
+                                            <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
+                                            <TextBlock Name="PART_TextUserScore" Style="{DynamicResource TextBlockGameScore}" />
+                                            <Label Name="PART_ElemLinks" Content="{DynamicResource LOCLinksLabel}" />
+                                            <ItemsControl Name="PART_ItemsLinks" />
+                                        </GridEx>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Column="2" Style="{DynamicResource VesperGlassPanelStyle}">
+                                    <StackPanel>
+                                        <StackPanel Name="PART_ElemNotes">
+                                            <TextBlock Text="{DynamicResource LOCNotesLabel}"
+                                                       Style="{DynamicResource VesperSectionTitleStyle}" />
+                                            <TextBox Name="PART_TextNotes"
+                                                     IsReadOnly="True"
+                                                     BorderThickness="0"
+                                                     Background="Transparent"
+                                                     AcceptsReturn="True"
+                                                     TextWrapping="Wrap"
+                                                     Margin="0,0,0,18"
+                                                     Padding="0" />
+                                        </StackPanel>
+                                        <StackPanel Name="PART_ElemDescription">
+                                            <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}"
+                                                       Style="{DynamicResource VesperSectionTitleStyle}" />
+                                            <HtmlTextView Name="PART_HtmlDescription"
+                                                          HtmlFontSize="{DynamicResource FontSize}"
+                                                          HtmlFontFamily="{DynamicResource FontFamily}"
+                                                          HtmlForeground="{DynamicResource TextColor}"
+                                                          LinkForeground="{DynamicResource GlyphColor}"
+                                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                          ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                                    </Grid>
+                                </Grid>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

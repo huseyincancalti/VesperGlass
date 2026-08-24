@@ -1,0 +1,61 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    mc:Ignorable="d">
+    <Style TargetType="{x:Type MainWindow}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MainWindow}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            d:DesignWidth="1280"
+                            d:DesignHeight="960">
+                        <Grid>
+                            <Grid.Resources>
+                                <Storyboard x:Key="VisibilityOn">
+                                    <ThicknessAnimation Storyboard.TargetName="PART_Notifications"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        From="-300,12,0,12"
+                                                        To="12,12,0,12"
+                                                        Duration="0:0:0.24">
+                                        <ThicknessAnimation.EasingFunction>
+                                            <BackEase Amplitude="0.16" EasingMode="EaseOut" />
+                                        </ThicknessAnimation.EasingFunction>
+                                    </ThicknessAnimation>
+                                </Storyboard>
+                                <Storyboard x:Key="VisibilityOff">
+                                    <ThicknessAnimation Storyboard.TargetName="PART_Notifications"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        From="12,12,0,12"
+                                                        To="-300,12,0,12"
+                                                        Duration="0:0:0.18">
+                                        <ThicknessAnimation.EasingFunction>
+                                            <CubicEase EasingMode="EaseIn" />
+                                        </ThicknessAnimation.EasingFunction>
+                                    </ThicknessAnimation>
+                                </Storyboard>
+                            </Grid.Resources>
+                            <ContentControl x:Name="PART_ContentView" />
+                            <Sidebar x:Name="PART_Sidebar"
+                                     Panel.ZIndex="900"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Stretch" />
+                            <NotificationPanel x:Name="PART_Notifications"
+                                               Width="288"
+                                               Margin="12"
+                                               Panel.ZIndex="1100"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Stretch"
+                                               WindowChrome.IsHitTestVisibleInChrome="True"
+                                               AnimatedVisibility.Visibility="{Settings NotificationPanelVisible}"
+                                               AnimatedVisibility.Visible="{StaticResource VisibilityOn}"
+                                               AnimatedVisibility.Collapsed="{StaticResource VisibilityOff}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

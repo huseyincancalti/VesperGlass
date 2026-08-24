@@ -1,0 +1,99 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:Double x:Key="FontSizeSmall">12</sys:Double>
+    <sys:Double x:Key="FontSize">14</sys:Double>
+    <sys:Double x:Key="FontSizeLarge">16</sys:Double>
+    <sys:Double x:Key="FontSizeLarger">22</sys:Double>
+    <sys:Double x:Key="FontSizeLargest">36</sys:Double>
+    <sys:Double x:Key="VesperPanelRadius">18</sys:Double>
+    <sys:Double x:Key="VesperCardRadius">14</sys:Double>
+    <FontFamily x:Key="FontFamily">Segoe UI Variable Text</FontFamily>
+    <FontFamily x:Key="MonospaceFontFamily">Cascadia Mono</FontFamily>
+    <Thickness x:Key="PopupBorderThickness">1</Thickness>
+    <Thickness x:Key="ControlBorderThickness">1</Thickness>
+    <sys:Double x:Key="EllipseBorderThickness">1</sys:Double>
+    <CornerRadius x:Key="ControlCornerRadius">12</CornerRadius>
+    <CornerRadius x:Key="VesperPanelCornerRadius">18</CornerRadius>
+    <CornerRadius x:Key="VesperCardCornerRadius">14</CornerRadius>
+    <Thickness x:Key="SidebarItemPadding">10</Thickness>
+    <Thickness x:Key="VesperPanelPadding">18</Thickness>
+    <Color x:Key="BlackColor">#FF090A0C</Color>
+    <Color x:Key="WhiteColor">#FFF7F4ED</Color>
+    <Color x:Key="TextColor">#FFF4F1EA</Color>
+    <Color x:Key="TextColorDarker">#FFAAA69D</Color>
+    <Color x:Key="TextColorDark">#FF1A1207</Color>
+    <Color x:Key="MainColor">#CC171719</Color>
+    <Color x:Key="MainColorDark">#F20A0B0D</Color>
+    <Color x:Key="HoverColor">#52FFFFFF</Color>
+    <Color x:Key="GlyphColor">#FFF4F1EA</Color>
+    <Color x:Key="HighlightGlyphColor">#8CFFFFFF</Color>
+    <Color x:Key="PopupBackgroundColor">#F21A1A1D</Color>
+    <Color x:Key="PopupBorderColor">#33FFFFFF</Color>
+    <Color x:Key="BackgroundToneColor">#F20A0B0D</Color>
+    <Color x:Key="GridItemBackgroundColor">#B3121316</Color>
+    <Color x:Key="PanelSeparatorColor">#1FFFFFFF</Color>
+    <Color x:Key="WindowPanelSeparatorColor">#2BFFFFFF</Color>
+    <Color x:Key="DataChangeNotifColor">#FFFFFFFF</Color>
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="#B316171A" />
+    <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
+    <SolidColorBrush x:Key="TextBrushDarker" Color="{DynamicResource TextColorDarker}" />
+    <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
+    <SolidColorBrush x:Key="NormalBrush" Color="{DynamicResource MainColor}" />
+    <SolidColorBrush x:Key="NormalBrushDark" Color="{DynamicResource MainColorDark}" />
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="#24FFFFFF" />
+    <SolidColorBrush x:Key="HoverBrush" Color="#29FFFFFF" />
+    <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
+    <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
+    <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource PopupBorderColor}" />
+    <SolidColorBrush x:Key="TooltipBackgroundBrush" Color="{DynamicResource BackgroundToneColor}" />
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="#B31A1B1E" />
+    <SolidColorBrush x:Key="GridItemBackgroundBrush" Color="{DynamicResource GridItemBackgroundColor}" />
+    <SolidColorBrush x:Key="PanelSeparatorBrush" Color="{DynamicResource PanelSeparatorColor}" />
+    <SolidColorBrush x:Key="WindowPanelSeparatorBrush" Color="{DynamicResource WindowPanelSeparatorColor}" />
+    <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource PopupBackgroundColor}" />
+    <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource MainColorDark}" />
+    <SolidColorBrush x:Key="DataChangeNotifBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="PositiveRatingBrush" Color="#FF78D69A" />
+    <SolidColorBrush x:Key="NegativeRatingBrush" Color="#FFFF7C78" />
+    <SolidColorBrush x:Key="MixedRatingBrush" Color="#FFFFD479" />
+    <SolidColorBrush x:Key="WarningBrush" Color="#FFFF7C78" />
+    <SolidColorBrush x:Key="VesperSurfaceBrush" Color="#B3111215" />
+    <SolidColorBrush x:Key="VesperSurfaceStrongBrush" Color="#E817181B" />
+    <SolidColorBrush x:Key="VesperSurfaceSoftBrush" Color="#731C1D20" />
+    <SolidColorBrush x:Key="VesperSurfaceMutedBrush" Color="#99131518" />
+    <SolidColorBrush x:Key="VesperSurfaceHoverBrush" Color="#29FFFFFF" />
+    <SolidColorBrush x:Key="VesperLibraryPanelBrush" Color="#78111215" />
+    <SolidColorBrush x:Key="VesperInputBrush" Color="#CC0F1114" />
+    <SolidColorBrush x:Key="VesperInputHoverBrush" Color="#E6191818" />
+    <SolidColorBrush x:Key="VesperTrackBrush" Color="#A30B0D10" />
+    <SolidColorBrush x:Key="VesperDisabledBrush" Color="#66191A1D" />
+    <SolidColorBrush x:Key="VesperOverlayBrush" Color="#B307080A" />
+    <SolidColorBrush x:Key="VesperGlassBorderBrush" Color="#26FFFFFF" />
+    <SolidColorBrush x:Key="VesperGlassBorderStrongBrush" Color="#45FFFFFF" />
+    <SolidColorBrush x:Key="VesperInnerHighlightBrush" Color="#38FFFFFF" />
+    <SolidColorBrush x:Key="VesperAccentBrush" Color="#FFFFA000" />
+    <SolidColorBrush x:Key="VesperAccentBorderBrush" Color="#D9FFFFFF" />
+    <SolidColorBrush x:Key="VesperAccentSoftBrush" Color="#38FFFFFF" />
+    <SolidColorBrush x:Key="VesperAccentGlowBrush" Color="#66FFFFFF" />
+    <SolidColorBrush x:Key="VesperAccentHoverBrush" Color="#EBFFFFFF" />
+    <SolidColorBrush x:Key="VesperSelectionBrush" Color="#47FFFFFF" />
+    <SolidColorBrush x:Key="VesperAccentAtmosphereBrush" Color="#57FFFFFF" />
+    <LinearGradientBrush x:Key="VesperGlassSheenBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#24FFFFFF" Offset="0" />
+        <GradientStop Color="#08FFFFFF" Offset="0.18" />
+        <GradientStop Color="#00FFFFFF" Offset="0.55" />
+        <GradientStop Color="#12000000" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="VesperHeroScrimBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#18090A0C" Offset="0" />
+        <GradientStop Color="#52090A0C" Offset="0.45" />
+        <GradientStop Color="#F2090A0C" Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ExpanderBackgroundBrush" Color="#29FFFFFF" />
+    <LinearGradientBrush x:Key="WindowBackgourndBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FF111216" Offset="0" />
+        <GradientStop Color="#FF090A0C" Offset="0.48" />
+        <GradientStop Color="#FF07080A" Offset="1" />
+    </LinearGradientBrush>
+</ResourceDictionary>

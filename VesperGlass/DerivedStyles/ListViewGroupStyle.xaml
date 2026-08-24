@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="ListViewGroupStyle" TargetType="{x:Type GroupItem}">
+        <Setter Property="Template" Value="{DynamicResource VesperGroupItemTemplate}" />
+    </Style>
+</ResourceDictionary>

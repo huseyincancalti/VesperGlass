@@ -1,0 +1,7 @@
+/artifacts/
+/build/
+/graphify-out/
+/VESPER_GLASS_2_FULL_AUDIT.md
+/VesperGlass/graphify-out/
+/*.pthm
+!/packages/*.pthm

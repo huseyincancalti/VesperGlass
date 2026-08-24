@@ -1,0 +1,135 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource VesperGlassBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Root" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </Grid.RenderTransform>
+                        <Grid x:Name="Frame">
+                            <Border x:Name="Surface"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{DynamicResource ControlCornerRadius}" />
+                            <Border x:Name="AccentTint"
+                                    Margin="1"
+                                    Background="{DynamicResource VesperAccentBrush}"
+                                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                                    IsHitTestVisible="False"
+                                    Opacity="0" />
+                            <Border x:Name="InnerHighlight"
+                                    Margin="1"
+                                    BorderBrush="{DynamicResource VesperInnerHighlightBrush}"
+                                    BorderThickness="0,1,0,0"
+                                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                                    IsHitTestVisible="False" />
+                            <Border x:Name="Sheen"
+                                    Margin="1"
+                                    Background="{DynamicResource VesperGlassSheenBrush}"
+                                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                                    IsHitTestVisible="False" />
+                            <ContentPresenter x:Name="ContentHost"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              RecognizesAccessKey="True" />
+                            <Path x:Name="EditGlyph"
+                                  Width="13"
+                                  Height="13"
+                                  Data="M3,17.25 V21 H6.75 L17.81,9.94 L14.06,6.19 Z M20.71,7.04 C21.1,6.65 21.1,6.02 20.71,5.63 L18.37,3.29 C17.98,2.9 17.35,2.9 16.96,3.29 L15.13,5.12 L18.88,8.87 Z"
+                                  Fill="{DynamicResource TextBrush}"
+                                  Stretch="Uniform"
+                                  Visibility="Collapsed" />
+                            <Path x:Name="ResetGlyph"
+                                  Width="13"
+                                  Height="13"
+                                  Data="M13,3 C8.03,3 4,7.03 4,12 H1 L5,16 L9,12 H6 C6,8.13 9.13,5 13,5 C16.87,5 20,8.13 20,12 C20,15.87 16.87,19 13,19 C10.61,19 8.5,17.8 7.24,15.97 L5.78,17.43 C7.4,19.59 10.02,21 13,21 C17.97,21 22,16.97 22,12 C22,7.03 17.97,3 13,3 Z"
+                                  Fill="{DynamicResource TextBrush}"
+                                  Stretch="Uniform"
+                                  Visibility="Collapsed" />
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="&#x270f;">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="Frame" Property="Width" Value="30" />
+                            <Setter TargetName="Frame" Property="Height" Value="30" />
+                            <Setter TargetName="Frame" Property="HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="Surface" Property="Background" Value="{DynamicResource VesperSurfaceStrongBrush}" />
+                            <Setter TargetName="Surface" Property="BorderBrush" Value="{DynamicResource VesperGlassBorderStrongBrush}" />
+                            <Setter TargetName="Surface" Property="CornerRadius" Value="9" />
+                            <Setter TargetName="AccentTint" Property="CornerRadius" Value="8" />
+                            <Setter TargetName="InnerHighlight" Property="CornerRadius" Value="8" />
+                            <Setter TargetName="Sheen" Property="CornerRadius" Value="8" />
+                            <Setter TargetName="ContentHost" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="EditGlyph" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="Content" Value="&#x1f5d9;">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="Frame" Property="Width" Value="30" />
+                            <Setter TargetName="Frame" Property="Height" Value="30" />
+                            <Setter TargetName="Frame" Property="HorizontalAlignment" Value="Left" />
+                            <Setter TargetName="Surface" Property="Background" Value="{DynamicResource VesperSurfaceStrongBrush}" />
+                            <Setter TargetName="Surface" Property="BorderBrush" Value="{DynamicResource VesperGlassBorderStrongBrush}" />
+                            <Setter TargetName="Surface" Property="CornerRadius" Value="9" />
+                            <Setter TargetName="AccentTint" Property="CornerRadius" Value="8" />
+                            <Setter TargetName="InnerHighlight" Property="CornerRadius" Value="8" />
+                            <Setter TargetName="Sheen" Property="CornerRadius" Value="8" />
+                            <Setter TargetName="ContentHost" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ResetGlyph" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Surface" Property="Background" Value="{DynamicResource VesperSurfaceHoverBrush}" />
+                            <Setter TargetName="Surface" Property="BorderBrush" Value="{DynamicResource VesperAccentBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="Surface" Property="BorderBrush" Value="{DynamicResource VesperAccentBrush}" />
+                            <Setter TargetName="Surface" Property="BorderThickness" Value="2" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Root" Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="0.97" ScaleY="0.97" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Surface" Property="Background" Value="{DynamicResource VesperDisabledBrush}" />
+                            <Setter TargetName="Root" Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Content" Value="&#x270f;" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Surface" Property="Background" Value="{DynamicResource VesperSurfaceStrongBrush}" />
+                            <Setter TargetName="AccentTint" Property="Opacity" Value="0.14" />
+                            <Setter TargetName="EditGlyph" Property="Fill" Value="{DynamicResource VesperAccentBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Content" Value="&#x1f5d9;" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Surface" Property="Background" Value="{DynamicResource VesperSurfaceStrongBrush}" />
+                            <Setter TargetName="AccentTint" Property="Opacity" Value="0.14" />
+                            <Setter TargetName="ResetGlyph" Property="Fill" Value="{DynamicResource VesperAccentBrush}" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

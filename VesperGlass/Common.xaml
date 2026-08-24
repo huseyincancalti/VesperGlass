@@ -1,0 +1,111 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="BaseStyle" TargetType="Control">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.46" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.46" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="PopupBorder" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource PopupBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PopupBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource PopupBorderThickness}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource VesperCardCornerRadius}" />
+    </Style>
+    <Style x:Key="VesperGlassPanelStyle" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource VesperSurfaceBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource VesperGlassBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource VesperPanelCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource VesperPanelPadding}" />
+    </Style>
+    <Style x:Key="VesperCardStyle" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource VesperSurfaceSoftBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource VesperGlassBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource VesperCardCornerRadius}" />
+    </Style>
+    <Style x:Key="VesperSectionTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Margin" Value="0,0,0,12" />
+    </Style>
+    <Style x:Key="VesperMetadataLabelStyle" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="Margin" Value="0,5,12,5" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+    </Style>
+    <Style x:Key="VesperMetadataTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Margin" Value="0,5,0,5" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <ControlTemplate x:Key="VesperGroupItemTemplate" TargetType="{x:Type GroupItem}">
+                    <ExpanderEx SaveGameGroupId="{Binding Name, Mode=OneWay}"
+                                IsExpanded="True"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Padding="4,6,4,12">
+                        <ExpanderEx.Header>
+                            <Border Margin="2,6,2,8"
+                                    Padding="12,7"
+                                    Background="{DynamicResource VesperSurfaceSoftBrush}"
+                                    BorderBrush="{DynamicResource VesperGlassBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="10">
+                                <DockPanel>
+                                    <DockPanel.ContextMenu>
+                                        <GameGroupMenu />
+                                    </DockPanel.ContextMenu>
+                                    <Border Width="3"
+                                            Margin="0,1,9,1"
+                                            DockPanel.Dock="Left"
+                                            Background="{DynamicResource VesperAccentBrush}"
+                                            CornerRadius="2" />
+                                    <TextBlock Margin="0,0,7,0"
+                                               DockPanel.Dock="Left"
+                                               VerticalAlignment="Center"
+                                               FontWeight="SemiBold"
+                                               Foreground="{DynamicResource TextBrush}">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+                                                <Setter Property="Text" Value="{Binding Name, Converter={StaticResource ObjectToStringConverter}}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Name, Converter={StaticResource ObjectToStringConverter}}" Value="{x:Null}">
+                                                        <Setter Property="Text" Value="{DynamicResource LOCNone}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Name, Converter={StaticResource ObjectToStringConverter}}" Value="">
+                                                        <Setter Property="Text" Value="{DynamicResource LOCNone}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding Items.Count, StringFormat=({0})}"
+                                               DockPanel.Dock="Left"
+                                               VerticalAlignment="Center"
+                                               Foreground="{DynamicResource TextBrushDarker}"
+                                               Visibility="{Settings ShowGroupCount}" />
+                                </DockPanel>
+                            </Border>
+                        </ExpanderEx.Header>
+                        <ItemsPresenter />
+                    </ExpanderEx>
+    </ControlTemplate>
+</ResourceDictionary>

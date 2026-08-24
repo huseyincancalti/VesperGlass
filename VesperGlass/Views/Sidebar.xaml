@@ -1,0 +1,162 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    mc:Ignorable="d">
+    <Style TargetType="{x:Type Sidebar}">
+        <Setter Property="Width" Value="64" />
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Sidebar}">
+                    <Grid Width="64"
+                          ClipToBounds="False"
+                          Background="{x:Null}"
+                          IsHitTestVisible="True"
+                          WindowChrome.IsHitTestVisibleInChrome="True">
+                        <Border Width="2"
+                                Margin="0,18,0,18"
+                                HorizontalAlignment="Left"
+                                Background="{DynamicResource VesperAccentBrush}"
+                                IsHitTestVisible="False"
+                                Opacity="0.7" />
+                        <Border x:Name="StateLatch"
+                                Width="0"
+                                Height="0"
+                                Opacity="0"
+                                IsHitTestVisible="False" />
+                        <Border x:Name="EdgeTrigger"
+                                Width="4"
+                                HorizontalAlignment="Left"
+                                Background="#01000000"
+                                WindowChrome.IsHitTestVisibleInChrome="True" />
+                        <Border x:Name="SafeZone"
+                                Width="64"
+                                HorizontalAlignment="Left"
+                                Background="#01000000"
+                                IsHitTestVisible="False"
+                                WindowChrome.IsHitTestVisibleInChrome="True">
+                            <Border x:Name="PanelSurface"
+                                    Width="64"
+                                    Margin="0,10,0,18"
+                                    Padding="6"
+                                    HorizontalAlignment="Left"
+                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                    Style="{DynamicResource VesperGlassPanelStyle}"
+                                    CornerRadius="0,18,18,0"
+                                    Opacity="0.18">
+                                <Border.RenderTransform>
+                                    <TranslateTransform X="-54" />
+                                </Border.RenderTransform>
+                                <DockPanel>
+                                <Border x:Name="PART_ElemMainMenu"
+                                        Width="46"
+                                        Height="46"
+                                        Margin="0,0,0,6"
+                                        DockPanel.Dock="Top"
+                                        Background="{DynamicResource VesperSelectionBrush}"
+                                        BorderBrush="{DynamicResource VesperAccentBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="{DynamicResource ControlCornerRadius}"
+                                        Cursor="Hand"
+                                        WindowChrome.IsHitTestVisibleInChrome="True">
+                                    <Image Source="{DynamicResource PlayniteLogo}"
+                                           Width="34"
+                                           Height="34"
+                                           Stretch="Uniform"
+                                           RenderOptions.BitmapScalingMode="Fant" />
+                                </Border>
+                                <ScrollViewer x:Name="ScrollSidebarItems"
+                                              DockPanel.Dock="Top"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Auto"
+                                              CanContentScroll="True">
+                                    <StackPanel x:Name="PART_PanelSideBarItems" Orientation="Vertical" />
+                                </ScrollViewer>
+                                </DockPanel>
+                            </Border>
+                        </Border>
+                    </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger SourceName="EdgeTrigger" RoutedEvent="Mouse.MouseEnter">
+                                <BeginStoryboard HandoffBehavior="SnapshotAndReplace">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="StateLatch"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0" />
+                                        <DoubleAnimation Storyboard.TargetName="PanelSurface"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0:0:0.22" />
+                                        <DoubleAnimation Storyboard.TargetName="PanelSurface"
+                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                         To="0"
+                                                         Duration="0:0:0.42">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger SourceName="SafeZone" RoutedEvent="Mouse.MouseEnter">
+                                <BeginStoryboard HandoffBehavior="SnapshotAndReplace">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="StateLatch"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0" />
+                                        <DoubleAnimation Storyboard.TargetName="PanelSurface"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0:0:0.22" />
+                                        <DoubleAnimation Storyboard.TargetName="PanelSurface"
+                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                         To="0"
+                                                         Duration="0:0:0.42">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger SourceName="SafeZone" RoutedEvent="Mouse.MouseLeave">
+                                <BeginStoryboard HandoffBehavior="SnapshotAndReplace">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PanelSurface"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         BeginTime="0:0:0.50"
+                                                         To="0.18"
+                                                         Duration="0:0:0.20">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseInOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="PanelSurface"
+                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                         BeginTime="0:0:0.50"
+                                                         To="-54"
+                                                         Duration="0:0:0.20">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseInOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="StateLatch"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         BeginTime="0:0:0.70"
+                                                         To="0"
+                                                         Duration="0" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <Trigger SourceName="StateLatch" Property="Opacity" Value="1">
+                                <Setter TargetName="SafeZone" Property="IsHitTestVisible" Value="True" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
