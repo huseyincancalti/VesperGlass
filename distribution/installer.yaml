@@ -3,7 +3,7 @@ Packages:
   - Version: 2.9.0
     RequiredApiVersion: 2.8.0
     ReleaseDate: 2026-08-24
-    PackageUrl: https://raw.githubusercontent.com/huseyincancalti/VesperGlass/main/packages/VesperGlass_9d17c9d1-9c6e-4f26-80f0-dcb7ea9d0c43_2_9_0.pthm
+    PackageUrl: https://raw.githubusercontent.com/huseyincancalti/VesperGlass/main/packages/VesperGlass-2.9.0.pthm
     Changelog:
       - Initial public release.
       - Added dark tactile glass styling and configurable amber accent color.
