@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.1 - 2026-08-28
+
+- Updated the displayed author name to huseyincancalti.
+
 ## 2.9.0 - 2026-08-24
 
 - Initial public release of the Vesper Glass Desktop theme.

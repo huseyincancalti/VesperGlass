@@ -34,12 +34,12 @@ This is the normal installation path and the only one that receives Playnite-man
 
 **Updates:** Playnite detects newer packages from the official listing. You do not need to download every new version yourself.
 
-### Download `VesperGlass-2.9.0.pthm` — manual alternative
+### Download `VesperGlass-2.9.1.pthm` — manual alternative
 
-[Download VesperGlass-2.9.0.pthm](https://github.com/huseyincancalti/VesperGlass/raw/main/packages/VesperGlass-2.9.0.pthm)
+[Download VesperGlass-2.9.1.pthm](https://github.com/huseyincancalti/VesperGlass/raw/main/packages/VesperGlass-2.9.1.pthm)
 
 1. Download the file above.
-2. Double-click `VesperGlass-2.9.0.pthm`, or drag it onto an open Playnite window.
+2. Double-click `VesperGlass-2.9.1.pthm`, or drag it onto an open Playnite window.
 3. Accept the installation prompt and restart Playnite if requested.
 4. Select **Vesper Glass** in `Settings…` > `Appearance` > `General` if it is not applied automatically.
 
