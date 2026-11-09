@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo.png" alt="Vesper Glass logo" width="128" />
+</p>
+
 # Vesper Glass
 
 Vesper Glass is a dark, neo-minimalist glass theme for Playnite Desktop Mode. It pairs tactile translucent surfaces with a vivid amber accent, full-library backdrop treatment, and animated edge panels.
